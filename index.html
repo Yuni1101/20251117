@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sketch</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script src="libraries/p5.min.js"></script>
+    <script src="libraries/p5.sound.min.js"></script>
+  </head>
+
+  <body>
+    <!-- 載入動畫容器 -->
+    <div id="loading-screen" class="loading-screen">
+      <div class="terminal-content">
+        <div id="terminal-text" class="terminal-text"></div>
+        <span id="cursor" class="cursor">▌</span>
+      </div>
+    </div>
+
+    <!-- 歡迎動畫容器 -->
+    <div id="welcome-screen" class="welcome-screen hidden">
+      <div id="welcome-text" class="welcome-text">Welcome!!</div>
+      <div id="user-info" class="user-info">414730225 陳怜安</div>
+    </div>
+
+    <iframe id="content-frame" src="" title="測驗系統內容" sandbox="allow-scripts allow-forms allow-same-origin" style="display: none; position: fixed; left: 15%; top: 7.5%; width: 70%; height: 85%; border: none; background: white; z-index: 999;"></iframe>
+    <script src="sketch.js"></script>
+  </body>
+</html>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sixtyfour&display=swap" rel="stylesheet">

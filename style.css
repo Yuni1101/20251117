@@ -1,0 +1,181 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+canvas {
+  display: block;
+}
+
+/* iframe (測驗系統) 樣式 */
+#content-frame {
+  display: none; /* 由 script 控制顯示 */
+  position: fixed;
+  left: 15%;
+  top: 7.5%;
+  width: 70%;
+  height: 85%;
+  border: none;
+  background: #fff;
+  z-index: 99999;
+}
+
+/* 小螢幕時改為全螢幕覆蓋 */
+@media (max-width: 700px) {
+  #content-frame {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+}
+/* <uniquifier>: Use a unique and descriptive class name */
+
+.sixtyfour {
+  font-family: "Sixtyfour", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "BLED" 0,
+    "SCAN" 0;
+}
+
+/* ===== 載入動畫樣式 ===== */
+
+@font-face {
+  font-family: 'Sixtyfour';
+  src: url('fonts/Sixtyfour-Regular-VariableFont_BLED,SCAN.ttf') format('truetype');
+}
+
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  opacity: 1;
+  transition: opacity 1.5s ease-out;
+}
+
+.loading-screen.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.terminal-content {
+  font-family: 'Sixtyfour', sans-serif;
+  font-size: 45px;
+  color: #ffffff;
+  letter-spacing: 1px;
+  line-height: 2;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  text-align: center;
+  max-width: 800px;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 100px;
+}
+
+.terminal-text {
+  display: block;
+  text-align: center;
+}
+
+.fade-line {
+  opacity: 1;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.school-line {
+  opacity: 1;
+  transition: opacity 1.2s ease-out;
+  text-align: center;
+}
+
+.school-line.fade-out {
+  opacity: 0;
+}
+
+.cursor {
+  display: inline;
+  animation: none;
+}
+
+.terminal-content div {
+  text-align: center;
+}
+
+/* ===== 歡迎動畫樣式 ===== */
+
+.welcome-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.welcome-screen.hidden {
+  display: none;
+}
+
+.welcome-text {
+  font-family: 'Sixtyfour', sans-serif;
+  font-size: 90px;
+  font-weight: bold;
+  color: #ffffff;
+  letter-spacing: 2px;
+  margin-bottom: 80px;
+  animation: bounceIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.user-info {
+  font-family: 'Sixtyfour', sans-serif;
+  font-size: 35px;
+  color: #000000;
+  letter-spacing: 1px;
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
+  animation-delay: 1s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
